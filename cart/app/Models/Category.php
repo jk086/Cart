@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    protected $fillable=['name'];
+    use HasFactory;
+    protected $fillable=['id','name'];  // enable use upadate the field
 
     public function product(){
-
-        return $this->hasMany('App\Product');
+        return $this->hasMany('App\Models\Product');
     }
+
 }
